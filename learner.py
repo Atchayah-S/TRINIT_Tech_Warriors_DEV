@@ -1,5 +1,5 @@
 print("Hello learner Welcome")
-class User:
+'''class User:
     def __init__(self, username, password):
         self.username = username
         self.password = password
@@ -33,3 +33,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+     <py-script src="learner.py"></py-script>
+    '''
