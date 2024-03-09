@@ -1,37 +1,41 @@
-print("Hello learner Welcome")
-'''class User:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-class Website:
-    def __init__(self):
-        self.users = {}
-
-    def add_user(self, username, password):
-        self.users[username] = password
-
-    def login(self, username, password):
-        if username in self.users and self.users[username] == password:
-            return True
-        else:
-            return False
-
-# Example usage
-website = Website()
-website.add_user('user1', 'password1')
-website.add_user('user2', 'password2')
-
-def main():
-    username = input("Enter your username: ")
-    password = input("Enter your password: ")
-
-    if website.login(username, password):
-        print("Login successful")
+import hashlib
+def signup():
+    email = input("Enter email address: ")
+    pwd = input("Enter password: ")
+    conf_pwd = input("Confirm password: ")
+    if conf_pwd == pwd:
+        enc = conf_pwd.encode()
+        hash1 = hashlib.md5(enc).hexdigest()
+        with open("credentials.txt", "w") as f:
+             f.write(email + "\n")
+             f.write(hash1)
+        f.close()
+        print("You have registered successfully!")
     else:
-        print("Invalid username or password")
-
-if __name__ == "__main__":
-    main()
-     <py-script src="learner.py"></py-script>
-    '''
+        print("Password is not same as above! \n")
+def login():
+    email = input("Enter email: ")
+    pwd = input("Enter password: ")
+    auth = pwd.encode()
+    auth_hash = hashlib.md5(auth).hexdigest()
+    with open("credentials.txt", "r") as f:
+        stored_email, stored_pwd = f.read().split("\n")
+    f.close()
+    if email == stored_email and auth_hash == stored_pwd:
+         print("Logged in Successfully!")
+    else:
+         print("Login failed! \n")
+while 1:
+    print("********** Login System **********")
+    print("1.Signup")
+    print("2.Login")
+    print("3.Exit")
+    ch = int(input("Enter your choice: "))
+    if ch == 1:
+        signup()
+    elif ch == 2:
+        login()
+    elif ch == 3:
+        break
+    else:
+        print("Wrong Choice!")
