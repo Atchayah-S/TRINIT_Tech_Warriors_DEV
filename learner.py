@@ -14,7 +14,8 @@ def signup():
     else:
         print("Password is not same as above! \n")
 def login():
-    email = input("Enter email: ")
+    print("e-mail :")
+    email = input()
     pwd = input("Enter password: ")
     auth = pwd.encode()
     auth_hash = hashlib.md5(auth).hexdigest()
@@ -22,7 +23,7 @@ def login():
         stored_email, stored_pwd = f.read().split("\n")
     f.close()
     if email == stored_email and auth_hash == stored_pwd:
-         print("Logged in Successfully!")
+         print("Login successfully")
     else:
          print("Login failed! \n")
 while 1:
