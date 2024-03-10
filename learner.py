@@ -37,5 +37,4 @@ while 1:
         break
     elif ch == "exit":
         break
-    else:
-        print("Wrong Choice!")
+    
