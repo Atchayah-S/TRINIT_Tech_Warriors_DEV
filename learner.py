@@ -24,7 +24,7 @@ def login(email,pwd):
     f.close()
     if email == stored_email and auth_hash == stored_pwd:
          print("Login successfully")
-         print("Welcome Learner! \nMake a move to upgrade yourself with current world")
+         #print("Welcome Learner! \nMake a move to upgrade yourself with current world")
     else:
          print("Login failed! \n")
 while 1:

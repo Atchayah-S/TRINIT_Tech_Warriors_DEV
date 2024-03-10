@@ -24,7 +24,7 @@ def login(email,pwd):
     f.close()
     if email == stored_email and auth_hash == stored_pwd:
          print("Login successfully")
-         print("Welcome Tutor! \nSharing is a good thing especially when comes to knowledge")
+     #    print("Welcome Tutor! \nSharing is a good thing especially when comes to knowledge")
     else:
          print("Login failed! \n")
 while 1:
